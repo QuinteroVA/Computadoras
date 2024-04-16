@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Formulario de Computadora</title>
+</head>
+<body>
+<div class="container" th:replace="fragments/header::header"></div>
+<br>
+<div class="container-fluid">
+  <div class="my-3">
+    <form th:object="${computadora}" th:action="${accion}" method="post" style="max-width:550px; margin:0 auto">
+      <h1>Formulario Computadoras</h1>
+      <div class="p-3">
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label" for="marca">Marca</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" th:field="*{marca}" id="marca">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label" for="modelo">Modelo</label>
+          <div class="col-sm-9">
+            <input type="text" th:field="*{modelo}" class="form-control" id="modelo"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label" for="procesador">Procesador</label>
+          <div class="col-sm-9">
+            <input type="text" th:field="*{procesador}" class="form-control" id="procesador"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label" for="ram">RAM:</label>
+          <div class="col-sm-9">
+            <input type="text" th:field="*{ram}" class="form-control" id="ram"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label" for="disco">Disco Duro:</label>
+          <div class="col-sm-9">
+            <input type="text" th:field="*{disco}" class="form-control" id="disco"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label" for="grafica">Tarjeta Gráfica</label>
+          <div class="col-sm-9">
+            <input type="text" th:field="*{grafica}" class="form-control" id="grafica"/>
+          </div>
+        </div>
+        <div class="text-center">
+          <input type="submit" value="Guardar" class="btn btn-primary btn-sm mr-2" id="btnGuardar"/>
+          <input type="submit" value="Cancelar" class="btn btn-secondary btn-sm mr-2" id="btnCancelar"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+</html>
